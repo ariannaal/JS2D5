@@ -54,14 +54,14 @@ console.log(me)
 */
 
 me.skills.push("R");
-console.log(me);
+console.log(me); 
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
 
-/* me.skills.pop();
-console.log(me); */
+me.skills.pop();
+console.log(me);
 
 // Funzioni
 
@@ -97,16 +97,42 @@ console.log(whoIsBigger(10, 4))
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+function splitMe(frase) {
+  const fraseSplittata = frase.split(" ");
+  return fraseSplittata;
+}
+
+console.log(splitMe("I gatti sono animali bellissimi"))
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+
+function deleteOne(parola, tf) {
+  if (tf === true) {
+    return parola.substring(1);
+  } else {
+    return parola.substring(0, parola.length - 1);
+  }
+} 
+
+console.log(deleteOne("montagna", true));
+console.log(deleteOne("montagna", false));
+
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+
+function onlyLetters(lettere) {
+  const nuoveLettere = lettere.replace(2, "due")
+  return nuoveLettere;
+  }
+
+console.log(onlyLetters("le mie 2 gatte si chiamano Nina e Gaia"))
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
