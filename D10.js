@@ -419,18 +419,63 @@ console.log(onlyTheYears(movies));
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
 
+function onlyInLastMillennium(array) {
+  const filmMillennioScorso = array.filter(function(movie) {
+    return parseInt(movie.Year) < 2000;
+  })
+  return filmMillennioScorso;
+}
+
+
+console.log(onlyInLastMillennium(movies));
+
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+
+function sumAllTheYears(array) {
+  return array.reduce(function (acc, curr) {
+    return acc + parseInt(curr.Year);
+  }, 0);
+  }
+  
+
+
+console.log(sumAllTheYears(movies));
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
+const searchByTitle = function (array, stringaFilm) {
+  return array.find(function (element) {
+    return element.imdbID === stringaFilm;
+  });
+};
+
+console.log(searchByTitle(movies, 'tt4154756'))
+
+
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+
+function searchAndDivide(array, stringaDivide) {
+  const match = [];
+  const unmatch = [];
+  array.forEach(function (movie) {
+    if (movie.Title.includes(stringaDivide)) {
+      match.push(movie);
+    } else {
+      unmatch.push(movie);
+    }
+  });
+  return { match: match, unmatch: unmatch };
+  
+}
+
+console.log(searchAndDivide(movies, "the"));
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
