@@ -46,13 +46,22 @@ console.log(me);
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
 
+me.skills = ["JavaScript"];
+console.log(me)
+
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 
+me.skills.push("R");
+console.log(me);
+
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+
+/* me.skills.pop();
+console.log(me); */
 
 // Funzioni
 
@@ -60,9 +69,27 @@ console.log(me);
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
 
+function dice() {
+  const numeroCasuale = Math.floor(Math.random() * 6 + 1);
+  return numeroCasuale;
+}
+
+console.log(dice());
+
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+
+function whoIsBigger (n1, n2) {
+  if (n1 > n2) {
+    return n1;
+  } else {
+    return n2;
+  }
+}
+
+console.log(whoIsBigger(3, 7));
+console.log(whoIsBigger(10, 4))
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
